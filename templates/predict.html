@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Prediction</title>
+</head>
+<body>
+    <div style="background: rgba(255, 255, 255, 0.7);">
+        <nav><h2>Speech Emotion Recognition</h2></nav>
+    <div class="outer-container">
+        <div class="container">
+            <div class="white">
+                <form method="post" enctype="multipart/form-data">
+                    <p>Upload an Audio File:</p>
+                    <input type="file" name="file">
+                    <input type="submit" value="PREDICT">
+                </form>
+            </div>
+    
+            {% if prediction %}
+            <div class="white">
+                <p>Emotion Detected in the latest uploaded file:</p>
+                <br>
+                <div style="display:flex;justify-content:space-around;text-transform: uppercase;align-items: center;"><b>{{ prediction }}</b> <span><img width="100px" src="static/emotions/{{prediction}}.jpeg" alt=""></span></div>
+            </div>
+            {% endif %}
+
+            <div class="white" style="width: 600px;">
+                <hr>
+                <p>Developed under the guidance of <b>Mr. Dharmendra Kumar Roy</b></p>
+                <hr>
+                <h5 style="margin: 5px 0;">By:</h5>
+                <ul>
+                    <li>Naga Venkata Gopi Kumbha</li>
+                    <li>G. Teja Alex Raj</li>
+                    <li>B. Akhilesh</li>
+                    <li>Harender Sankhla</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
